@@ -28,14 +28,19 @@
             class="logo"
             alt="Logo da ONG Patas Amigas"/>
 
-            <nav class="navegacao">
+            <button class="humburguer" onclick="abrirMenu()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+                </svg>
+            </button>
+
+            <nav class="navegacao"  id="menu" aria-label="Menu principal">
                 <ul class="container-lista-nav">
-                    <li> <a href="#sobre">Sobre</a> </li>
-                    <li> <a href="#dicas">Dicas</a> </li>
-                    <!-- <li> <a href="#vacina">Vacina</a> </li> -->
-                    <li> <a href="#adotar">Adotar</a> </li>
-                    <li> <a href="#ajudar">Ajudar</a> </li>
-                    <li> <a href="#contato">Contato</a> </li>
+                    <li> <a href="#sobre" onclick="fecharMenu()">Sobre</a> </li>
+                    <li> <a href="#dicas" onclick="fecharMenu()">Dicas</a> </li>
+                    <li> <a href="#adotar" onclick="fecharMenu()">Adotar</a> </li>
+                    <li> <a href="#ajudar" onclick="fecharMenu()">Ajudar</a> </li>
+                    <li> <a href="#contato" onclick="fecharMenu()">Contato</a> </li>
                 </ul>
             </nav>
         </header>
@@ -91,7 +96,7 @@
 
                 <div class="container-card">
                     <div class="pet-card card">
-                        <img src="./image/meme-cao.avif" alt="Cão thor para doação"/>
+                        <img src="./image/cao-caramelo.jpg" alt="Cão thor para doação"/>
 
                         <div class="pet-info">
                             <h3 >Thor</h3>
@@ -105,7 +110,7 @@
                     </div>
 
                     <div class="pet-card card">
-                        <img src="https://placehold.co/200x200/pink/black?text=Mel" alt="Cão Mel para doação"/>
+                        <img src="./image/cao-caramelo.jpg" alt="Cão Mel para doação"/>
 
                         <div class="pet-info">
                             <h3>Mel</h3>
@@ -119,7 +124,7 @@
                     </div>
 
                     <div class="pet-card card">
-                        <img src="https://placehold.co/200x200/red/yellow?text=Bidu" alt="Cão Mel para doação"/>
+                        <img src="./image/cao-caramelo.jpg" alt="Cão Mel para doação"/>
 
                         <div class="pet-info">
                             <h3>Bidu</h3>
@@ -133,7 +138,7 @@
                         <a href="#">Quero adotar</a>
                     </div>
                     <div class="pet-card card">
-                        <img src="https://placehold.co/200x200/green/white?text=Café" alt="Cão Mel para doação"/>
+                        <img src="./image/cao-caramelo.jpg" alt="Cão Mel para doação"/>
 
                         <div class="pet-info">
                             <h3>Café</h3>
@@ -162,7 +167,7 @@
                 
                 <div class="container-card">
                     <article class="dica-card card">
-                            <div>🍖</div>
+                            <div class="dica-icon">🍖</div>
                         <h3 class="dica-card-titulo">Alimentação saudável</h3>
                         <p>
                             Ofereça ração de qualidade na quantidade certa para o 
@@ -175,7 +180,7 @@
                         </ul>
                     </article>
                     <article class="dica-card card">
-                        <div>🛁</div>
+                        <div class="dica-icon">🛁</div>
                         <h3 class="dica-card-titulo">Higiene e saúde</h3>
                         <p>
                             Banhos regulares, escovação e limpeza do ambiente evitam doenças 
@@ -189,7 +194,7 @@
                         </ol>
                     </article>
                     <article class="dica-card card">
-                        <div>❤️</div>
+                        <div class="dica-icon">❤️</div>
                         <h3 class="dica-card-titulo">Saúde e Carinho</h3>
                         <p>
                             Banhos regulares, escovação e limpeza do ambiente evitam doenças 
@@ -289,6 +294,7 @@
                     class="mapa"
                     allowfullscreen="" 
                     loading="lazy" 
+                    title="Mapa"
                     referrerpolicy="strict-origin-when-cross-origin">
                     </iframe>
                 </div>
@@ -340,11 +346,10 @@
                 class="logo"
                 />
 
-            <nav class="navegacao">
+            <nav class="navegacao" aria-label="Links do rodapé">
                 <ul class="container-lista-nav ul-rodape">
                     <li> <a href="#sobre">Sobre</a> </li>
                     <li> <a href="#dicas">Dicas</a> </li>
-                    <!-- <li> <a href="#vacina">Vacina</a> </li> -->
                     <li> <a href="#adotar">Adotar</a> </li>
                     <li> <a href="#ajudar">Ajudar</a> </li>
                     <li> <a href="#contato">Contato</a> </li>
@@ -353,5 +358,7 @@
 
             <p>&copy; 2026 ONG Patas Amigas - Todos os direitos reservados. Feito com carinho pelos animais.</p>
         </footer>
+
+        <script src="./js/js.js"></script>
     </body>
 </html>

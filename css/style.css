@@ -15,35 +15,33 @@ body{
     display: flex;
     flex-direction: column;
     gap: 50px;
-    /* margin-top: 20px; */
     padding: 20px 0;
-    min-height: 100vh;
+    min-height: 70vh;
 }
 
 .container-conteudo{
     display: flex;
     flex-direction: column;
     padding-left: 10px;
+    /* width: 70%; */
 }
 
 .container-conteudo p{
-    font-size: 18px;
-    padding-left: 10px;
+    font-size: 15px;
 }
 
 .container-titulo{
-    font-size: 40px;
-    text-align: center;
+    font-size: 18px;
+    text-align: left;
     display: flex;
-    padding-left: 10px;
-
+    gap: 5px;
 }
 
 .circulo-titulo{
     background-color: #F95738;
-    width: 50px;
-    height: 50px;
-    border-radius: 50px;
+    width: 30px;
+    height: 30px;
+    border-radius: 30px;
 }
 
 .container-card{
@@ -72,57 +70,86 @@ body{
 .cabecalho{
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    position:sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
     background-color: #F95738;
 }
 
+/* ======= BOTÃO HAMBÚGUER ==== */
+
+.humburguer{
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 158px;
+    width: 158px;
+    color: #2e2620;
+    display: block;
+}
 
 .cabecalho .navegacao{
-    width: 50%;
-    padding: 10px;
+    display: none;
+    position:absolute;
+    top: 100%;
+    left:0;
+    width: 100%;
+    background: #fff6ee;
+    flex-direction: column;
+    padding: 10px 0;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.cabecalho .navegacao.aberto{
+    display: flex;
 }
 
 .container-lista-nav{
     display: flex;
+    flex-direction: column;
     list-style: none;
-    height: 100%;
+    width: 100%;
     align-items: center;
-    justify-content: end;
-    gap: 25px;
+    gap: 15px;
 }
-
 .container-lista-nav li>a{
     text-decoration: none;
     font-size: 20px;
     font-weight: 500;
 }
 
-.container-lista-nav li>a:hover{
+.container-lista-nav li{
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+}
+
+.container-lista-nav li:hover{
     opacity: 0.8;
+    background-color:#e85520;
 }
 
 /* banner */
 
 .banner{
-    background-image: url("/image/imagem-fundo-banner.png");
-    background-size: 100vw;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 400px;
+    padding: 35px 20px;
     background-color: #FAF0CA;
-    position: relative;
 }
 
 .banner-conteudo{
-    position: absolute;
-    top: 50px;
-    left: 20px;
-    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
 .banner-conteudo h1{
-    font-size: 46px;
+    font-size: 40px;
     margin-bottom: 10px;
-     font-family: "Archivo Black", sans-serif;
+    font-family: "Archivo Black", sans-serif;
 }
 
 .banner-conteudo h1 span{
@@ -132,7 +159,7 @@ body{
 }
 
 .banner-conteudo p{
-    font-size: 18px;
+    font-size: 15px;
     margin-bottom: 30px;
     max-width: 460px;
 }
@@ -144,7 +171,7 @@ body{
     padding: 14px 30px;
     border-radius: 30px;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 15px;
 }
 
 .banner-conteudo a:hover{
@@ -156,7 +183,7 @@ body{
 /* Cards - de adoção */
  
 .pet-card{
-    width: 300px;
+    width: 450px;
     height: 400px;
     align-items: center;
     
@@ -213,7 +240,7 @@ body{
 
 .dica-card{
     padding: 20px;
-    width: 390px;
+    width: 380px;
     height: 377px;
     border: #0D3B66 1px solid;
 }
@@ -245,10 +272,11 @@ body{
 }
 
 .tabela-calendario{
-    width: 800px;
+    width: 90%;
     margin: 0 auto;
     overflow-x: auto;
 }
+
 table{
     width: 100%;
     background-color: #fff;
@@ -321,7 +349,6 @@ tr:last-child td {
     padding: 20px;
    
 }
-
 
 .formulario{
     max-width: 600px;
@@ -398,3 +425,213 @@ tr:last-child td {
     justify-content: center;
 }
 
+
+
+/* Reponsividade */
+
+/* tablet  */
+@media(min-width: 768px){
+
+    /* cabeçalho */
+    .humburguer{
+        display: none;
+    }
+
+    .cabecalho .navegacao{
+        display: flex;
+        position:static;
+        flex-direction: row;
+        width: auto;
+        background: none;
+        box-shadow:none;
+        padding: 10px 15px;
+    }
+
+    .container-lista-nav{
+        flex-direction: row;
+    }
+
+    .container-lista-nav li>a{
+        font-size: 25px;
+    }
+    
+    .container-lista-nav li:hover{
+        background-color: transparent;
+    }
+
+
+    /* banner */
+
+    .banner{
+        background-image: url("/image/imagem-fundo-banner.png");
+        background-size: cover;
+        background-position: bottom center;
+        background-repeat: no-repeat;
+        height: 400px;
+        background-color: #FAF0CA;
+        position: relative;
+    }
+
+    .banner-conteudo{
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        width: 50%;
+        text-align: left;
+        align-items:flex-start;
+        margin: 0;
+    }
+
+    .banner-conteudo h1{
+        font-size: 43px;
+    }
+
+    .banner-conteudo p{
+        font-size: 18px;
+    }
+
+    .banner-conteudo a{
+        font-size: 18px;
+    }
+
+    /* Título h2 da página */
+
+    .container-conteudo p{
+        font-size: 18px;
+    }
+    .container-titulo{
+        font-size: 30px;
+    }
+
+    .circulo-titulo{
+        width: 40px;
+        height: 40px;
+        border-radius: 40px;
+    }
+
+    /* dicas */
+
+    #dicas{
+        background-color: #fff;
+        padding: 50px 8px;
+    }
+
+    .dica-card-titulo{
+        font-size: 26px;
+        color:#F95738;
+    }
+    .dica-card p{
+        font-size: 18px;
+    }
+
+    .dica-icon{
+        font-size: 30px;
+    }
+
+    /* Formulário */
+    .container-conteudo-form h3{
+        font-size: 30px;
+    }
+    .container-conteudo-form p{
+        font-size: 20px;
+    }
+
+    .formulario label{
+        font-size: 18px;
+    }
+
+    .formulario input, select, textarea{
+        font-size: 18px;
+    }
+
+    .formulario button{
+        font-size: 20px;
+    }
+
+}
+
+
+@media(min-width: 830px){
+    /* banner */
+
+    .banner-conteudo{
+        top: 30px;
+    }
+
+     /* Cards - pet */
+
+    .container-card{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-items: center;
+        max-width: 1100px;
+        margin: 0 auto;
+    }
+
+    .pet-card{
+        width: 370px;
+        align-items: center;
+        height: 420px;
+        
+    }
+    .pet-info h3{
+        font-size: 35px;
+    }
+    /* Cards - ajudar */
+    #ajudar > .bloco{
+        min-height: 40vh;
+    }
+    .ajudar-card{
+        width: 380px;
+        height: 250px;
+    }
+    .ajudar-card h3{
+        font-size: 30px;
+    }
+
+    /* Formulário */
+    .formulario{
+        max-width: 800px;
+    }
+
+    #contato > .bloco{
+       min-height: 50vh;
+    }
+
+}
+
+
+@media(min-width: 1000px){
+    /* banner */
+
+    .banner-conteudo{
+        top: 100px;
+    }
+    .banner{
+        background-image: url("/image/imagem-fundo-banner.png");
+        background-size: cover;
+        background-position: bottom center;
+        background-repeat: no-repeat;
+        height: 450px;
+        background-color: #FAF0CA;
+        position: relative;
+    }
+
+    /* cads */
+
+
+    /* ajudar */
+    .ajudar-card{
+        width: 420px;
+        height: 250px;
+    }
+
+    /* pets */
+
+    .pet-card{
+         width: 450px;
+        align-items: center;
+        height: 450px;
+        
+    }
+}
